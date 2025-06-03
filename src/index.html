@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- #header-->
+  <div class="main-container">
+
+  <div id="add-product-modal" class="modal-hidden-product">
+  <div class="modal-form-content">
+    <form id="product-form">
+      <h2>Añadir Producto</h2>
+      <input type="text" id="name" placeholder="Nombre del producto" required />
+      <input type="number" id="price" placeholder="Precio" required />
+      <select name="typeSelector" id="typeSelector">
+        <option value="Helados">Helados</option>
+        <option value="Especiales">Especiales</option>
+        <option value="Deluxe">Deluxe</option>
+        <option value="Rellenas">Rellenas</option>
+        <option value="Frappe">Frappe</option>
+        <option value="Topping">Topping</option>
+        <option value="Agua">Agua</option>
+        <option value="Leche">Leche</option>
+        <option value="Yogurt">Yogurt</option>
+        <option value="Sodas">Sodas</option>
+        <option value="Licor">Licor</option>
+        <option value="Malteadas9onz">Malteadas(9onz)</option>
+        <option value="Malteadas12onz">Malteadas(12onz)</option>
+        <option value="Obleas">Obleas</option>
+        <option value="Ensaldas">Ensaladas</option>
+        <option value="Bebidas">Bebidas</option>
+        
+      </select>
+      <input type="number" id="id" style="display: none;" />
+      <button type="submit" id="submit-product-form">Guardar</button>
+      <button type="button" id="close-form-modal">Cerrar</button> 
+    </form>
+  </div>
+  </div>
+    <!-- Barra lateral de filtros rápidos -->
+    <div class="filter-section">
+      <h2>Filtrado Rápido</h2>
+      <form>
+        <label>
+          <input type="checkbox" name="category" value="Especiales">
+          Especiales
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Helados">
+          Helados
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Deluxe">
+          Deluxe
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Rellenas">
+          Rellenas
+        </label>      
+        <label>
+          <input type="checkbox" name="category" value="Frappe">
+          Frappe
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Topping">
+          Topping
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Agua">
+          Agua
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Leche">
+          Leche
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Yogurt">
+          Yogurt
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Sodas">
+          Sodas
+        </label> 
+        <label>
+          <input type="checkbox" name="category" value="Licor">
+          Licor
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Malteadas9onz">
+          Malteadas(9onz)
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Malteadas12onz">
+          Malteadas(12onz)
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Obleas">
+          Obleas
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Ensaladas">
+          Ensaladas
+        </label>
+        <label>
+          <input type="checkbox" name="category" value="Bebidas">
+          Bebidas
+        </label>
+        
+        
+        
+        
+      </form>
+    </div> <!--filter-section-->
+  
+    <!-- Contenedor principal de productos -->
+    <div class="products-container">
+      <div class="products-sidebar">
+          <!-- Lista de productos -->
+          <div class="products-list">
+          <!-- Los productos se añadirán dinámicamente aquí -->
+         </div>
+      </div> <!--products-sidebar-->
+    </div> <!--products-container-->
+    
+    
+    <!-- Contenedor de productos seleccionados -->
+    <div class="selected-products-container">
+      <h2>Productos Seleccionados</h2>
+      <div class="selected-products-sidebar">
+        <table class="selected-products-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Descuento</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Productos dinamicamente mostrados aqui -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Línea separadora -->
+      <hr class="separator">
+      
+    </div> <!--selected-produtcs-container-->
+    
+  </div> <!--main-container-->
+  <div class="payment-container">
+  
+<div class="payment-left">
+  <!-- Espacio reservado para navegación -->
+  <div class="navigation">
+    <button class="index-button">
+      🏠 <a href="./index.html" class="nav-link">Inicio</a>
+    </button>
+    <button class="balance-button">
+      ⚖️ <a href="./balance.html" class="nav-link">Balance</a>
+    </button>
+    <button class="history-button">
+      ⏳ <a href="./history.html" class="nav-link">Historial</a>
+    </button>
+    <button class="sync-button" id="sync-button">
+      🔄 Sync
+    </button>
+
+    <button class="add-product" id="add-product-button">
+      ➕ Añadir 
+    </button>
+
+    <button class="edit-product" id="edit-product-button">
+      ✏️ <a href="./editProduct.html" class="nav-link">Editar</a>
+    </button>
+  </div>
+</div> <!--payment-left-->
+  
+    <!-- Contenedor derecho (Sección de pago) -->
+    <div class="payment-right">
+      <!-- Contenedor para "Cantidad dada" y "Vuelto" -->
+      <div class="amount-and-change">
+        <div class="amount-container">
+          <label for="amount-paid">Cantidad dada por el cliente:</label>
+          <input type="number" id="amount-paid" min="0" placeholder="Ingrese monto" />
+        </div>
+        <div class="change-container">
+          <p id="change-return">Vuelto: $0.00</p>
+        </div>
+        <button class="calculate-return-button">Calcular Vuelto</button>
+      </div> <!--amount-and-change-->
+  
+      <!-- Contenedor para Total, Radio Buttons y Botón de pago -->
+      <div class="total-and-payment">
+        <h2 id="total-display">Total: $0.00</h2>
+        <div id="validation-message-total" class = "validation-message-total"><p>No hay productos seleccionados</p></div>
+        <div class="payment-options">
+          <label>
+            <input type="radio" name="payment" value="efectivo" id="efectivo">
+            Efectivo
+          </label>
+          <label>
+            <input type="radio" name="payment" value="tarjeta" id="tarjeta">
+            Tarjeta
+          </label>
+          <label>
+            <input type="radio" name="payment" value="transferencia" id="transferencia">
+            Transferencia
+          </label>
+          <label>
+            <input type="radio" name="payment" value="multipago" id="multipago">
+            Multipago
+          </label>
+        </div> <!--payment-options-->
+        <!--Que se muestre solo al seleccionar el radio button de multipago-->
+        <div class ="multipago-container">
+          <label for="amount-paid-efectivo">Efectivo</label>
+          <label for="amount-paid-efectivo"></label>
+          <input type="number" id="amount-paid-efectivo" min="0" placeholder="Efectivo" />
+          <br>
+          <label for="amount-paid-other">Tarjeta</label>
+          <input type="number" id="amount-paid-other" min="0" placeholder="Tarjeta o tranferencia" />
+        </div> <!--multipago-container-->
+        
+        <div id = "validation-message-input" class="validation-message-input">
+          <p>Por favor rellene todos los campos requeridos</p>
+        </div>
+
+        <div id = "validation-message-value" class="validation-message-value">
+          <p>La suma del monto de efectivo y tarjeta es menor que el total</p>
+        </div>
+        <button class="pay-button">Pagar</button>
+
+      </div> <!--total-and-payment-->
+    </div> <!--payment-right-->
+
+    
+    </div> <!--confirmation-modal-->
+  </div> <!--payment-container-->
+  <div id="confirmation-modal" class="modal-hidden">
+    <div class="modal-content">
+      <p>¿Estás seguro de que deseas realizar el pago?</p>
+      <button id="confirm-payment" class="confirm-button">Sí, confirmar</button>
+      <button id="cancel-payment" class="cancel-button">Cancelar</button>
+    </div> 
+  </div> <!--confirmation-modal-->
+
+  <div id ="success-modal" class="success-modal">  
+    <div class="modal-success-content">
+      <p>¡Pago realizado con éxito!</p>
+      <button id="close-success-modal" class="close-button">Cerrar</button>
+    </div>
+  </div> <!--success-modal-->
+
+  <div id ="success-add-modal" class="success-add-modal">  
+    <div class="modal-add-success-content">
+      <p>¡Producto agregado correctamente!</p>
+      <button id="close-add-success-modal" class="close-add-button">Cerrar</button>
+    </div>
+  </div> <!--success-add-modal-->
+
+  <div id ="success-sync" class="success-sync">  
+    <div class="sync-success-content">
+      <p>Descarga exitosa!</p>
+      <button id="close-success-sync" class="close-sync">Cerrar</button>
+    </div>
+  </div> <!--success-sync-->
+
+  <div id ="error-sync" class="error-sync">  
+    <div class="sync-error-content">
+      <p>Ups! Algo salio mal</p>
+      <button id="close-error-sync" class="close-error-sync">Cerrar</button>
+    </div>
+  </div> <!--error-sync-->
+</body>
+<script src ="../renderer.js"></script>
+</html>

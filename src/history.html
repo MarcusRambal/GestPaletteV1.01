@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial</title>
+    <link rel="stylesheet" href="history.css"></link>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <!-- Logo -->
+    <div class="historial">
+      <a href="./history.html" class="nav-link">Historial</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="./index.html" class="nav-link">Inicio</a>
+      <a href="./balance.html" class ="nav-link">Balance</a>
+
+      
+
+    </nav>
+  </header>
+
+  <div id = "getFacturasContainer">
+    <button class ="get-facturasButton"> <p>Obtener Facturas</p></button>
+    <label for="start">Filtrado por Fecha: </label>
+    <input type="date" id="start" name="trip-start" value="2024-12-20" min="2018-01-01" max="2080-12-31" />
+    <script>
+      const inputFecha = document.getElementById("start");
+      const hoy = new Date();
+      const yyyy = hoy.getFullYear();
+      const mm = String(hoy.getMonth() + 1).padStart(2, '0');
+      const dd = String(hoy.getDate()).padStart(2, '0');
+      const fechaHoy = `${yyyy}-${mm}-${dd}`;
+      inputFecha.value = fechaHoy;
+    </script>
+    <button class="calendarButton">Submit</button>
+  </div>
+
+  <div id = "history-container">
+    <!-- Sidebar izquierdo con la lista de facturas -->
+     <div id="history-left"> 
+        <div class="invoices-sidebar">
+      <h2>Lista de Facturas</h2>
+      <div class="invoices-list">
+        <!-- Las facturas se cargarán aquí dinámicamente -->
+      </div>
+    </div>
+  </div> <!--history-left-->
+   
+    
+    <!-- Panel derecho con los detalles de la factura seleccionada -->
+     <div id="history-right">
+      <div class="invoice-details-container">
+        <h2>Detalles de la Factura</h2>
+        <div class="invoice-details">
+          <p>Selecciona una factura para ver los detalles.</p>
+        </div>
+      </div>
+     </div> <!--history-right-->
+    
+
+  </div> <!--history-container-->
+   
+ <script src="historysubpage.js"></script>
+</body>
+</html>
+

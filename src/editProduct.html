@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>EditProduct</title>
+    <link rel="stylesheet" href="editProduct.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Logo -->
+        <div class="Edit">
+        <a href="./editProduct.html" class="nav-link">Editar</a>
+        </div>
+
+       <!-- Navigation -->
+    <nav class="nav">
+      <a href="./index.html" class="nav-link">Inicio</a>
+      <a href="./history.html" class ="nav-link">Historial</a>
+      <a href="./balance.html" class ="nav-link">balance</a>
+    </nav>
+    </header>
+    <br>
+    <h1>Editar productos</h1>
+
+    <div class ="EditContainer">
+         <table id="product-table" border="1">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+                <th>Eliminar</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button id="saveButton">Guardar Cambios</button>
+    </div> <!--EditContainer-->
+
+
+            <!-- Modal de confirmación -->
+        <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <p id="modalText">¿Seguro que deseas eliminar este producto?</p>
+            <div class="modal-actions">
+            <button id="cancelDelete">Cancelar</button>
+            <button id="confirmDelete">Eliminar</button>
+            </div>
+        </div>
+        </div>
+
+        <!-- Modal de éxito -->
+        <div id ="success-modal" class="success-modal">  
+            <div class="modal-success-content">
+            <p>¡Configuracion guardada correctamente!</p>
+            <button id="close-success-modal" class="close-button">Cerrar</button>
+            </div>
+        </div> <!--success-modal-->
+
+
+        <div id ="error-message" class="error-message">  
+            <div class="error-message-content">
+            <p>Algo salio mal, asegurese que todos los valores sean validos</p>
+            <button id="close-error-message" class="close-error-message">Cerrar</button>
+            </div>
+        </div> <!--error-message-->
+
+    <script src="editProduct.js"></script>
+</body> 
+</html>

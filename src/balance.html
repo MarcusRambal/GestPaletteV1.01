@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance</title>
+    <link rel="stylesheet" href="balance.css"></link>
+</head>
+<body>
+   <!-- Header -->
+  <header class="header">
+    <!-- Logo -->
+    <div class="historial">
+      <a href="./balance.html" class="nav-link">Balance</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="./index.html" class="nav-link">Inicio</a>
+      <a href="./history.html" class ="nav-link">Historial</a>
+      
+    </nav>
+  </header>
+
+    <div id="filter-container">
+    <label for="start">Filtrado por Fecha: </label>
+    <input type="date" id="start" name="trip-start" value="2024-12-20" min="2018-01-01" max="2080-12-31" />
+      <script>
+        const inputFecha = document.getElementById("start");
+        const hoy = new Date();
+        const yyyy = hoy.getFullYear();
+        const mm = String(hoy.getMonth() + 1).padStart(2, '0'); 
+        const dd = String(hoy.getDate()).padStart(2, '0');
+        const fechaHoy = `${yyyy}-${mm}-${dd}`;
+        inputFecha.value = fechaHoy;
+      </script>
+    <button class="calendarButton">Submit</button>
+    </div> <!--filter-container-->
+
+  <div class="balance-container" id="balance-container">
+    <h2>Balance</h2>
+    <div class="balance-list">
+      <!-- Los balances se cargarán aquí dinámicamente -->
+    </div>
+  </div> <!--balance-container-->
+  
+  <script src="balance.js"></script>
+</body>
+</html>
