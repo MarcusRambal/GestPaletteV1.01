@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       document.getElementById('confirmDelete').addEventListener('click', async () => {
         if (currentProductToDelete) {
           try {
-            console.log('Eliminando producto:', currentProductToDelete.id)
+            // console.log('Eliminando producto:', currentProductToDelete.id)
             await window.paletteAPI.Products.deleteProduct(currentProductToDelete.id)
             const result = await window.paletteAPI.Products.getProducts()
             products = result.products
@@ -136,21 +136,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       try {
-        console.log('Productos actualizados:', updatedProducts)
+        // console.log('Productos actualizados:', updatedProducts)
         await window.paletteAPI.Products.saveProducts(updatedProducts)
         const result = await window.paletteAPI.Products.getProducts()
         products = result.products
         renderProducts(products)
         showSuccessMessage()
-        console.log('Productos guardados correctamente.')
+        // console.log('Productos guardados correctamente.')
       } catch (error) {
         console.error('Error al guardar los productos:', error)
-        console.log('Hubo un error al guardar los productos.')
+        // console.log('Hubo un error al guardar los productos.')
       }
     })
 
     renderProducts(products)
   } catch (error) {
-    console.error('Error fetching products:', error)
+    // console.error('Error fetching products:', error)
   }
 })

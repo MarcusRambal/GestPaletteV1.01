@@ -1,4 +1,4 @@
-console.log('preload cargado correctamente')
+// console.log('preload cargado correctamente')
 
 const { contextBridge, ipcRenderer } = require('electron')
 

@@ -1,4 +1,4 @@
-console.log('renderer.js cargado correctamente')
+// console.log('renderer.js cargado correctamente')
 
 document.addEventListener('DOMContentLoaded', async () => {
   const productsContainer = document.querySelector('.products-list')
@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const { products } = await window.paletteAPI.Products.getProducts() // Extrae 'products'
     if (!products || products.length === 0) {
-      console.log('No se encontraron productos en el archivo config.json.')
+      // console.log('No se encontraron productos en el archivo config.json.')
       return
     }
 
     function getNextId () {
       try {
         const maxId = products.reduce((max, product) => Math.max(max, product.id || 0), 0)
-        console.log('Max ID:', maxId)
+        // console.log('Max ID:', maxId)
         return maxId + 1
       } catch (error) {
         console.error('Error al obtener el siguiente ID:', error)
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(input => input.value)
       const result = await window.paletteAPI.Products.getProducts()
       const updateProducts = result.products
-      console.log('Productos filtrados:', updateProducts)
+      // console.log('Productos filtrados:', updateProducts)
       const filteredProducts = updateProducts.filter(product => {
         return selectedCategories.length === 0 || selectedCategories.includes(product.type)
       })
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       if (total === 0) {
         validationMessageTotal.style.display = 'block'
-        console.log('No hay productos seleccionados')
+        // console.log('No hay productos seleccionados')
         setTimeout(() => {
           validationMessageTotal.style.display = 'none'
         }, 5000)
@@ -393,12 +393,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       const priceValue = document.getElementById('price').value
 
       if (isNaN(priceValue) || priceValue <= 0) {
-        console.log('Por favor, ingrese un precio válido mayor que 0.')
+        // console.log('Por favor, ingrese un precio válido mayor que 0.')
         return
       }
 
       const nextID = getNextId()
-      console.log('Siguiente ID:', nextID)
+      // console.log('Siguiente ID:', nextID)
       const product = {
         name: document.getElementById('name').value,
         price: parseInt(document.getElementById('price').value),
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       try {
         await window.paletteAPI.Invoice.downloadInvoices()
         showSyncSuccess()
-        console.log('Archivos descargados correctamente.')
+        // console.log('Archivos descargados correctamente.')
       } catch (error) {
         showSyncError()
         console.error('Error al descargar los archivos:', error)

@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     container.querySelectorAll('.view-details').forEach(button => {
       button.addEventListener('click', async (event) => {
         const invoiceId = event.target.dataset.id
-        console.log('Mostrar detalles de la factura con ID:', invoiceId)
+        // console.log('Mostrar detalles de la factura con ID:', invoiceId)
         const invoiceDetails = await window.paletteAPI.Calls.detailButton(invoiceId)
-        console.log('Detalles de la factura:', invoiceDetails)
+        // console.log('Detalles de la factura:', invoiceDetails)
         showInvoiceDetails(invoiceDetails)
       })
     })
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   calendarButton.addEventListener('click', async () => {
     try {
       const selectedDate = dateInput.value
-      console.log('Fecha seleccionada:', selectedDate)
+      // console.log('Fecha seleccionada:', selectedDate)
 
       if (!selectedDate) {
         console.error('Por favor, selecciona una fecha.')
@@ -79,17 +79,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       const filteredInvoices = await window.paletteAPI.Operations.filterByDate(selectedDate)
       renderInvoices(filteredInvoices, invoicesList)
     } catch (error) {
-      console.error('Error al obtener las facturas:', error)
+      // console.error('Error al obtener las facturas:', error)
     }
   })
 
   historyButton.addEventListener('click', async () => {
     try {
       const invoices = await window.paletteAPI.Calls.historyButton()
-      console.log('Facturas obtenidas:', invoices)
+      // console.log('Facturas obtenidas:', invoices)
       renderInvoices(invoices, invoicesList)
     } catch (error) {
-      console.error('Error al obtener las facturas:', error)
+      // console.error('Error al obtener las facturas:', error)
     }
   })
 })

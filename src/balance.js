@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     calendarButton.addEventListener('click', async () => {
       try {
         const selectedDate = dateInput.value
-        console.log('Fecha seleccionada:', selectedDate)
+        // console.log('Fecha seleccionada:', selectedDate)
 
         if (!selectedDate) {
           console.error('Por favor, selecciona una fecha.')
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const balance = await window.paletteAPI.Operations.filterByDay(selectedDate)
-        console.log('Facturas filtradas:', balance)
-        console.log(typeof balance)
+        // console.log('Facturas filtradas:', balance)
+        // console.log(typeof balance)
         renderBalance(balance, balanceList, selectedDate)
       } catch (error) {
         console.error('Error al obtener las facturas:', error)

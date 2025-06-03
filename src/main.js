@@ -7,9 +7,9 @@ const sqlite3 = require('sqlite3').verbose()
 const dbPath = path.join(app.getPath('userData'), 'Invoices.db')
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
-    console.log('Error al conectar con la base de datos:', err)
+    // console.log('Error al conectar con la base de datos:', err)
   } else {
-    console.log('Base de datos conectada correctamente.')
+    // console.log('Base de datos conectada correctamente.')
 
     // Crear tabla de facturas
     db.serialize(() => {
@@ -25,9 +25,9 @@ const db = new sqlite3.Database(dbPath, (err) => {
         )
       `, (err) => {
         if (err) {
-          console.log('Error al crear la tabla Invoices:', err)
+          // console.log('Error al crear la tabla Invoices:', err)
         } else {
-          console.log('Tabla "Invoices" creada o ya existe.')
+          // console.log('Tabla "Invoices" creada o ya existe.')
         }
       })
 
@@ -46,9 +46,9 @@ const db = new sqlite3.Database(dbPath, (err) => {
         )
       `, (err) => {
         if (err) {
-          console.log('Error al crear la tabla InvoiceItems:', err)
+          // console.log('Error al crear la tabla InvoiceItems:', err)
         } else {
-          console.log('Tabla "InvoiceItems" creada o ya existe.')
+          // console.log('Tabla "InvoiceItems" creada o ya existe.')
         }
       })
     })
@@ -94,7 +94,7 @@ ipcMain.handle('db:add-invoice', (event, invoice) => {
 
       stmt.finalize()
 
-      console.log('Factura insertada correctamente con ID:', invoiceId)
+      // console.log('Factura insertada correctamente con ID:', invoiceId)
     })
   })
 })
@@ -250,7 +250,7 @@ app.whenReady().then(() => {
       const filePath = path.join(__dirname, '../config.json')
 
       fs.writeFileSync(filePath, JSON.stringify({ products }, null, 2))
-      console.log('Productos guardados correctamente en config.json')
+      // console.log('Productos guardados correctamente en config.json')
       return { success: true, message: 'Productos guardados correctamente' }
     } catch (error) {
       console.error('Error al guardar productos:', error)
@@ -347,7 +347,7 @@ app.whenReady().then(() => {
               return
             }
             if (rows.length === 0) {
-              console.log('No se encontraron facturas para la fecha:', date)
+              // console.log('No se encontraron facturas para la fecha:', date)
             }
             resolve(rows)
           }
@@ -383,7 +383,7 @@ app.whenReady().then(() => {
               return
             }
             if (rows.length === 0) {
-              console.log('No se encontraron ventas para la fecha:', date)
+              // console.log('No se encontraron ventas para la fecha:', date)
               resolve([]) // Devolver un arreglo vacío si no hay ventas
             } else {
               const balance = {
