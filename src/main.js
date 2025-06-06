@@ -3,6 +3,48 @@ const path = require('path')
 const fs = require('fs')
 const sqlite3 = require('sqlite3').verbose()
 
+const userConfigPath = path.join(app.getPath('userData'), 'config.json')
+const isPackaged = app.isPackaged
+
+const defaultConfigPath = isPackaged
+  ? path.join(process.resourcesPath, 'assets', 'config.json') // producción
+  : path.join(__dirname, '..', 'assets', 'config.json') // desarrollo (ajustado)
+
+console.log('Ruta defaultConfigPath:', defaultConfigPath)
+console.log('Existe defaultConfigPath?', fs.existsSync(defaultConfigPath))
+
+function asegurarConfig () {
+  if (!fs.existsSync(userConfigPath)) {
+    try {
+      fs.copyFileSync(defaultConfigPath, userConfigPath)
+      console.log('config.json copiado desde los valores por defecto.')
+    } catch (err) {
+      console.error('Error al copiar config.json:', err)
+    }
+  } else {
+    console.log('config.json ya existe, no se sobrescribe.')
+  }
+}
+
+function getLocalizedTimestampForFilename () {
+  const now = new Date()
+
+  // Esto usará el formato local del sistema (es-CO si tu SO está en español de Colombia)
+  const localeString = now.toLocaleString('es-CO', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false // usa formato 24 horas
+  })
+
+  return localeString
+    .replace(/[/:]/g, '-')
+    .replace(', ', '_')
+}
+
 // Configuración de la base de datos sqlite
 const dbPath = path.join(app.getPath('userData'), 'Invoices.db')
 const db = new sqlite3.Database(dbPath, (err) => {
@@ -122,7 +164,7 @@ ipcMain.handle('db:download-invoices', async () => {
       fs.mkdirSync(folderPath, { recursive: true })
     }
 
-    const timestamp = new Date().toISOString().replace(/[:T]/g, '-').split('.')[0]
+    const timestamp = getLocalizedTimestampForFilename()
     const filePath = path.join(folderPath, `facturas_${timestamp}.csv`)
 
     const getAllInvoicesWithItems = () => {
@@ -193,7 +235,7 @@ ipcMain.handle('db:download-invoices', async () => {
 const loadProducts = () => {
   // Cargar productos al inicio
   try {
-    const data = fs.readFileSync(path.join(__dirname, '../config.json'), 'utf-8')
+    const data = fs.readFileSync(userConfigPath, 'utf-8')
     return JSON.parse(data)
   } catch (error) {
     console.error('Error al leer config.json:', error)
@@ -217,23 +259,24 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   createWindow()
-
+  asegurarConfig()
   // Enviar productos al renderer
   ipcMain.handle('get-products', () => {
     return loadProducts()
   })
 
-  // Agregar un producto
+  // Manejar la adición de productos
   ipcMain.handle('add-product', (event, product) => {
     try {
-      const data = fs.readFileSync(path.join(__dirname, '../config.json'), 'utf-8')
+      const data = fs.readFileSync(userConfigPath, 'utf-8')
       const config = JSON.parse(data)
+
       if (!Array.isArray(config.products)) {
         config.products = []
       }
 
       config.products.push(product)
-      fs.writeFileSync(path.join(__dirname, '../config.json'), JSON.stringify(config, null, 2))
+      fs.writeFileSync(userConfigPath, JSON.stringify(config, null, 2))
 
       return { success: true, message: 'Producto agregado correctamente' }
     } catch (error) {
@@ -242,15 +285,12 @@ app.whenReady().then(() => {
     }
   })
 
+  // Guardar productos (editar varios)
   ipcMain.handle('save-product', (event, product) => {
-    // Guardar un producto editados
+    // console.log('Guardando productos:', product)
     try {
       const products = Object.values(product)
-
-      const filePath = path.join(__dirname, '../config.json')
-
-      fs.writeFileSync(filePath, JSON.stringify({ products }, null, 2))
-      // console.log('Productos guardados correctamente en config.json')
+      fs.writeFileSync(userConfigPath, JSON.stringify({ products }, null, 2))
       return { success: true, message: 'Productos guardados correctamente' }
     } catch (error) {
       console.error('Error al guardar productos:', error)
@@ -258,23 +298,20 @@ app.whenReady().then(() => {
     }
   })
 
+  // Eliminar un producto
   ipcMain.handle('delete-product', async (event, productId) => {
     try {
-      const filePath = path.join(__dirname, '../config.json')
-      const data = fs.readFileSync(filePath, 'utf-8')
+      const data = fs.readFileSync(userConfigPath, 'utf-8')
       const config = JSON.parse(data)
 
-      // Verificamos si existe la propiedad products
       if (!Array.isArray(config.products)) {
         throw new Error('El archivo no contiene una lista de productos válida.')
       }
 
-      // Filtrar el producto que NO sea el que queremos eliminar
       const updatedProducts = config.products.filter(product => product.id !== productId)
-
-      // Guardar el nuevo objeto completo
       const newConfig = { ...config, products: updatedProducts }
-      fs.writeFileSync(filePath, JSON.stringify(newConfig, null, 2), 'utf-8')
+
+      fs.writeFileSync(userConfigPath, JSON.stringify(newConfig, null, 2), 'utf-8')
 
       return { success: true, message: 'Producto eliminado correctamente' }
     } catch (error) {

@@ -25,20 +25,20 @@
     "sqlite3": "^5.1.7"
   },
   "build": {
-    "appId": "com.gestpalette.id",
-    "productName": "GestPalette",
-    "directories": {
-      "output": "dist"
-    }
+  "appId": "com.gestpalette.id",
+  "productName": "GestPalette",
+  "directories": {
+    "output": "dist"
   },
   "files": [
+    "assets/**/*",
     "src/**/*",
     "preload.js",
     "renderer.js",
-    "package.json",
-    "config.json"
+    "package.json"
   ],
   "win": {
-    "icon": "assets/paletteicon.ico"
+    "icon": "GestPalette-1.01/assets/paletteicon.ico"
   }
+}
 }

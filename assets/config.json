@@ -523,77 +523,77 @@
       "price": 3500,
       "cost": 0,
       "type": "Bebidas",
-      "id": 117
+      "id": 118
     },
     {
       "name": "Oblea con arequipe",
       "price": 4000,
       "cost": 0,
       "type": "Obleas",
-      "id": 118
+      "id": 119
     },
     {
       "name": "Oblea arequipe salsa mora",
       "price": 5500,
       "cost": 0,
       "type": "Obleas",
-      "id": 118
+      "id": 120
     },
     {
       "name": "Oblea arequipe salsa mora y queso",
       "price": 7000,
       "cost": 0,
       "type": "Obleas",
-      "id": 118
+      "id": 121
     },
     {
       "name": "Oblea arequipe salsa mora y chantilly",
       "price": 7000,
       "cost": 0,
       "type": "Obleas",
-      "id": 118
+      "id": 122
     },
     {
       "name": "Ensalada grande",
       "price": 13000,
       "cost": 0,
       "type": "Ensaladas",
-      "id": 118
+      "id": 123
     },
     {
       "name": "Ensalada Mini",
       "price": 9000,
       "cost": 0,
       "type": "Ensaladas",
-      "id": 118
+      "id": 124
     },
     {
       "name": "Fresas, crema chantilly salsa de mora, leche condensadas y M&M",
       "price": 14000,
       "cost": 0,
       "type": "Helados",
-      "id": 119
+      "id": 125
     },
     {
       "name": "Fresas, crema chantilly salsa mora y una bola de helado",
       "price": 14000,
       "cost": 0,
       "type": "Helados",
-      "id": 119
+      "id": 126
     },
     {
       "name": "Fresas, cream chantilly salsa mora y leche condensada",
       "price": 12000,
       "cost": 0,
       "type": "Helados",
-      "id": 119
+      "id": 127
     },
     {
       "name": "Fresas, cream de leche, salsa mora y arequipe",
       "price": 12000,
       "cost": 0,
       "type": "Helados",
-      "id": 119
+      "id": 128
     }
   ]
 }

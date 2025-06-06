@@ -33,9 +33,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function getNextId () {
       try {
-        const maxId = products.reduce((max, product) => Math.max(max, product.id || 0), 0)
-        // console.log('Max ID:', maxId)
-        return maxId + 1
+        if (!Array.isArray(products)) {
+          throw new Error('La variable "products" no es un arreglo.')
+        }
+
+        // Crear un Set con todos los IDs existentes válidos (números positivos enteros)
+        const existingIds = new Set(
+          products
+            .map(p => p.id)
+            .filter(id => Number.isInteger(id) && id >= 0)
+        )
+
+        let nextId = 1
+        while (existingIds.has(nextId)) {
+          nextId++
+        }
+
+        return nextId
       } catch (error) {
         console.error('Error al obtener el siguiente ID:', error)
         return 1
@@ -279,14 +293,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.log(total)
 
       const paymentMethods = document.querySelector('input[name="payment"]:checked')
+      console.log(paymentMethods)
       let paymentType = paymentMethods ? paymentMethods.value : 'efectivo'
+      console.log(paymentType)
 
       const amountPaidEfectivo = parseFloat(multiefectivo.value)
       const amountPaidOther = parseFloat(multiother.value)
 
       const pagos = [amountPaidEfectivo, amountPaidOther]
 
-      if (!['efectivo', 'tarjeta', 'transferencia', 'multipago'].includes(paymentType)) {
+      if (!['efectivo', 'tarjeta', 'transferencia', 'nequi', 'multipago'].includes(paymentType)) {
         paymentType = 'efectivo' // Valor por defecto
       }
 
@@ -304,6 +320,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         tipoPago: paymentType,
         multipagos: paymentType === 'multipago' ? pagos : []
       }
+      console.log('Factura a guardar:', invoice)
 
       try {
         await saveInvoice(invoice)
@@ -330,8 +347,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     payButton.addEventListener('click', async () => {
       const total = calculateTotalFromProducts(selectedProducts)
-      // cambiar el como se agarra el total ya que se puede modificar desde consola
       const paymentMethods = document.querySelector('input[name="payment"]:checked')
+      console.log(paymentMethods)
       const paymentType = paymentMethods ? paymentMethods.value : 'efectivo'
 
       if (total === 0) {

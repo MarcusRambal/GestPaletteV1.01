@@ -111,7 +111,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const index = parseInt(cell.getAttribute('data-index'))
         const field = cell.getAttribute('data-field')
         const value = cell.innerText
-        updatedProducts[index][field] = field === 'price' ? Number(value) : value
+        if (field !== 'price') {
+          updatedProducts[index][field] = value
+        }
       })
 
       document.querySelectorAll('input[type="number"][data-field="price"]').forEach(input => {
