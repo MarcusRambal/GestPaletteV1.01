@@ -23,9 +23,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const productModal = document.getElementById('add-product-modal')
   const formCloseButton = document.getElementById('close-form-modal')
   const selectedProducts = {}
-
+  let products = []
   try {
-    const { products } = await window.paletteAPI.Products.getProducts() // Extrae 'products'
+    const { products: initialProducts } = await window.paletteAPI.Products.getProducts() // Extrae 'products'
+    products = initialProducts // Asigna los productos obtenidos a la variable products
     if (!products || products.length === 0) {
       // console.log('No se encontraron productos en el archivo config.json.')
       return
@@ -432,6 +433,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const updatedProducts = await window.paletteAPI.Products.getProducts()
         updateProductList(updatedProducts.products) // Actualizar la lista de productos con los nuevos datos
         // Agregar el nuevo producto a la lista de productos
+        products = updatedProducts.products
         productModal.style.display = 'none'
 
         showAddSuccess()
