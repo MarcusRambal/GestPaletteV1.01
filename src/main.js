@@ -29,7 +29,6 @@ function asegurarConfig () {
 function getLocalizedTimestampForFilename () {
   const now = new Date()
 
-  // Esto usará el formato local del sistema (es-CO si tu SO está en español de Colombia)
   const localeString = now.toLocaleString('es-CO', {
     year: 'numeric',
     month: '2-digit',
@@ -37,7 +36,7 @@ function getLocalizedTimestampForFilename () {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-    hour12: false // usa formato 24 horas
+    hour12: false
   })
 
   return localeString
@@ -101,7 +100,13 @@ const db = new sqlite3.Database(dbPath, (err) => {
 ipcMain.handle('db:add-invoice', (event, invoice) => {
   // Insertar la factura en la tabla Invoices
   const { productos, total, tipoPago, multipagos } = invoice
-  const [efectivo, tarjeta] = multipagos
+  let efectivo = null
+  let tarjeta = null
+
+  if (multipagos && Array.isArray(multipagos) && multipagos.length === 2) {
+    efectivo = multipagos[0]
+    tarjeta = multipagos[1]
+  }
 
   db.serialize(() => {
     // Insertar la factura

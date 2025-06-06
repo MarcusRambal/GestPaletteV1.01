@@ -280,7 +280,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     radioButton.forEach((rbutton) => {
       rbutton.addEventListener('change', (event) => {
         const selectedPayment = event.target.value
-        if (selectedPayment === 'multipago') {
+        if (selectedPayment === 'multipagoNequi' || selectedPayment === 'multipagoBancolombia') {
+          // Mostrar campos de multipago
           multipagoContainer.style.display = 'block' // Mostrar
         } else {
           multipagoContainer.style.display = 'none' // Ocultar
@@ -302,7 +303,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       const pagos = [amountPaidEfectivo, amountPaidOther]
 
-      if (!['efectivo', 'tarjeta', 'transferencia', 'nequi', 'multipago'].includes(paymentType)) {
+      if (!['efectivo', 'tarjeta', 'transferencia', 'nequi', 'multipagoNequi', 'multipagoBancolombia'].includes(paymentType)) {
         paymentType = 'efectivo' // Valor por defecto
       }
 
@@ -318,7 +319,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         })),
         total: calculateTotalFromProducts(selectedProducts),
         tipoPago: paymentType,
-        multipagos: paymentType === 'multipago' ? pagos : []
+        multipagos: paymentType === 'multipagoNequi' || paymentType === 'multipagoBancolombia'
+          ? pagos
+          : null
       }
       console.log('Factura a guardar:', invoice)
 

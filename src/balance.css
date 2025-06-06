@@ -109,17 +109,29 @@
 }
 
 .balance-efectivo {
-  background-color: #e1f7e1;
+  background-color: #f0f8ff; /* Light AliceBlue */
 }
 
 .balance-multipago {
-  background-color: #d5f8d5;
+  background-color: #e6e6fa; /* Lavender */
 }
 
 .balance-tarjeta {
-  background-color: #d0f0d0;
+  background-color: #fff0f5; /* LavenderBlush */
 }
 
 .balance-transferencia {
-  background-color: #c5e7c5;
+  background-color: #f0ffff; /* Azure */
+}
+
+.balance-multipagoNequi {
+  background-color: #e0ffff; /* PaleTurquoise */
+}
+
+.balance-multipagoBancolombia {
+  background-color: #f5fffa; /* MintCream */
+}
+
+.balance-nequi {
+  background-color: #fffaf0; /* FloralWhite */
 }
