@@ -1,0 +1,44 @@
+{
+  "name": "gestpalette",
+  "version": "1.0.0",
+  "main": "./src/main.js",
+  "scripts": {
+    "dev": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Marcus Rambal Preston",
+  "license": "ISC",
+  "description": "An invoice software for Frupalette",
+  "devDependencies": {
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8",
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "sqlite3": "^5.1.7"
+  },
+  "build": {
+  "appId": "com.gestpalette.id",
+  "productName": "GestPalette",
+  "directories": {
+    "output": "dist"
+  },
+  "files": [
+    "assets/**/*",
+    "src/**/*",
+    "preload.js",
+    "renderer.js",
+    "package.json"
+  ],
+  "win": {
+    "icon": "assets/paletteicon.ico"
+  }
+}
+}

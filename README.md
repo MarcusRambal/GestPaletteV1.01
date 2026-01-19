@@ -1,0 +1,4 @@
+# GestPalette
+
+Dependencias:
+- npm install

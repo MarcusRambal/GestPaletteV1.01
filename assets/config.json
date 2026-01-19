@@ -1,0 +1,599 @@
+{
+  "products": [
+    {
+      "name": "Mini Chip",
+      "price": 4500,
+      "cost": 0,
+      "type": "Especiales",
+      "id": 1
+    },
+    {
+      "name": "Corozo Coco",
+      "price": 4500,
+      "cost": 0,
+      "type": "Especiales",
+      "id": 2
+    },
+    {
+      "name": "Vainilla con Oreo",
+      "price": 4500,
+      "cost": 0,
+      "type": "Especiales",
+      "id": 3
+    },
+    {
+      "name": "Vainilla Chispas de Chocolate",
+      "price": 4500,
+      "cost": 0,
+      "type": "Especiales",
+      "id": 9
+    },
+    {
+      "name": "Queso con Bocadillo",
+      "price": 4500,
+      "cost": 0,
+      "type": "Especiales",
+      "id": 10
+    },
+    {
+      "name": "Vainilla Brownie",
+      "price": 4500,
+      "cost": 0,
+      "type": "Especiales",
+      "id": 11
+    },
+    {
+      "name": "Mango Biche",
+      "price": 4500,
+      "cost": 0,
+      "type": "Especiales",
+      "id": 13
+    },
+    {
+      "name": "Mango Biche Ginger",
+      "price": 4500,
+      "cost": 0,
+      "type": "Especiales",
+      "id": 14
+    },
+    {
+      "name": "Vaso Oreo",
+      "price": 7500,
+      "cost": 0,
+      "type": "Helados",
+      "id": 18
+    },
+    {
+      "name": "Vaso Sencillo",
+      "price": 5000,
+      "cost": 0,
+      "type": "Helados",
+      "id": 19
+    },
+    {
+      "name": "Cono Sencillo",
+      "price": 4000,
+      "cost": 0,
+      "type": "Helados",
+      "id": 20
+    },
+    {
+      "name": "Cono Doble",
+      "price": 5500,
+      "cost": 0,
+      "type": "Helados",
+      "id": 21
+    },
+    {
+      "name": "Fresa Cubierta de Chocolate",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 27
+    },
+    {
+      "name": "Vainilla Cubierta de Chocolate",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 28
+    },
+    {
+      "name": "Maracuya con Leche Condensada",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 29
+    },
+    {
+      "name": "Coco Arequipe",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 31
+    },
+    {
+      "name": "Banano Nutella",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 34
+    },
+    {
+      "name": "Fresa con Leche Condensada",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 35
+    },
+    {
+      "name": "Cafe Relleno con Arequipe",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 36
+    },
+    {
+      "name": "Chocolate Rellena de Arequipe",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 38
+    },
+    {
+      "name": "Choc Blanco Relleno de Frambuesa",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 39
+    },
+    {
+      "name": "Fresas con Crema",
+      "price": 5000,
+      "cost": 0,
+      "type": "Rellenas",
+      "id": 40
+    },
+    {
+      "name": "Mango Biche Ginger",
+      "price": 11000,
+      "cost": 0,
+      "type": "Frappe",
+      "id": 42
+    },
+    {
+      "name": "Mango Biche",
+      "price": 11000,
+      "cost": 0,
+      "type": "Frappe",
+      "id": 43
+    },
+    {
+      "name": "Fresa",
+      "price": 11000,
+      "cost": 0,
+      "type": "Frappe",
+      "id": 47
+    },
+    {
+      "name": "Limon",
+      "price": 11000,
+      "cost": 0,
+      "type": "Frappe",
+      "id": 48
+    },
+    {
+      "name": "Mango",
+      "price": 11000,
+      "cost": 0,
+      "type": "Frappe",
+      "id": 50
+    },
+    {
+      "name": "Maracuya",
+      "price": 11000,
+      "cost": 0,
+      "type": "Frappe",
+      "id": 51
+    },
+    {
+      "name": "Mora",
+      "price": 11000,
+      "cost": 0,
+      "type": "Frappe",
+      "id": 52
+    },
+    {
+      "name": "Galleta Sultana",
+      "price": 1000,
+      "cost": 0,
+      "type": "Topping",
+      "id": 58
+    },
+    {
+      "name": "Lluvia de Chocolate",
+      "price": 1000,
+      "cost": 0,
+      "type": "Topping",
+      "id": 59
+    },
+    {
+      "name": "Lluvia de Colores",
+      "price": 1000,
+      "cost": 0,
+      "type": "Topping",
+      "id": 60
+    },
+    {
+      "name": "Galleta Oreo Triturada",
+      "price": 1000,
+      "cost": 0,
+      "type": "Topping",
+      "id": 61
+    },
+    {
+      "name": "Mani",
+      "price": 1000,
+      "cost": 0,
+      "type": "Topping",
+      "id": 62
+    },
+    {
+      "name": "Leche Condensada",
+      "price": 1000,
+      "cost": 0,
+      "type": "Topping",
+      "id": 63
+    },
+    {
+      "name": "Cobertura de Chocolate",
+      "price": 1000,
+      "cost": 0,
+      "type": "Topping",
+      "id": 64
+    },
+    {
+      "name": "Corozo",
+      "price": 3500,
+      "cost": 0,
+      "type": "Agua",
+      "id": 65
+    },
+    {
+      "name": "Fresa",
+      "price": 3500,
+      "cost": 0,
+      "type": "Agua",
+      "id": 66
+    },
+    {
+      "name": "Limon",
+      "price": 3500,
+      "cost": 0,
+      "type": "Agua",
+      "id": 67
+    },
+    {
+      "name": "Mango",
+      "price": 3500,
+      "cost": 0,
+      "type": "Agua",
+      "id": 69
+    },
+    {
+      "name": "Maracuya",
+      "price": 3500,
+      "cost": 0,
+      "type": "Agua",
+      "id": 70
+    },
+    {
+      "name": "Mora",
+      "price": 3500,
+      "cost": 0,
+      "type": "Agua",
+      "id": 71
+    },
+    {
+      "name": "Mandarina",
+      "price": 3500,
+      "cost": 0,
+      "type": "Agua",
+      "id": 76
+    },
+    {
+      "name": "Zapote",
+      "price": 4300,
+      "cost": 0,
+      "type": "Leche",
+      "id": 78
+    },
+    {
+      "name": "Guanabana",
+      "price": 4300,
+      "cost": 0,
+      "type": "Leche",
+      "id": 80
+    },
+    {
+      "name": "Chocolate",
+      "price": 4300,
+      "cost": 0,
+      "type": "Leche",
+      "id": 81
+    },
+    {
+      "name": "Arequipe",
+      "price": 4300,
+      "cost": 0,
+      "type": "Leche",
+      "id": 82
+    },
+    {
+      "name": "Kola con Leche",
+      "price": 4300,
+      "cost": 0,
+      "type": "Leche",
+      "id": 84
+    },
+    {
+      "name": "Mora",
+      "price": 5000,
+      "cost": 0,
+      "type": "Yogurt",
+      "id": 86
+    },
+    {
+      "name": "Maracuya",
+      "price": 5000,
+      "cost": 0,
+      "type": "Yogurt",
+      "id": 87
+    },
+    {
+      "name": "Frutos Rojos",
+      "price": 5000,
+      "cost": 0,
+      "type": "Yogurt",
+      "id": 88
+    },
+    {
+      "name": "Con Frutas",
+      "price": 5000,
+      "cost": 0,
+      "type": "Yogurt",
+      "id": 89
+    },
+    {
+      "name": "Yogurt",
+      "price": 5000,
+      "cost": 0,
+      "type": "Yogurt",
+      "id": 90
+    },
+    {
+      "name": "Fresa",
+      "price": 5000,
+      "cost": 0,
+      "type": "Yogurt",
+      "id": 91
+    },
+    {
+      "name": "Kiwi",
+      "price": 5000,
+      "cost": 0,
+      "type": "Yogurt",
+      "id": 92
+    },
+    {
+      "name": "Maracuya",
+      "price": 12000,
+      "cost": 0,
+      "type": "Sodas",
+      "id": 94
+    },
+    {
+      "name": "Fresa",
+      "price": 12000,
+      "cost": 0,
+      "type": "Sodas",
+      "id": 95
+    },
+    {
+      "name": "Mango Biche",
+      "price": 12000,
+      "cost": 0,
+      "type": "Sodas",
+      "id": 96
+    },
+    {
+      "name": "Limon",
+      "price": 12000,
+      "cost": 0,
+      "type": "Sodas",
+      "id": 97
+    },
+    {
+      "name": "Baileys",
+      "price": 5000,
+      "cost": 0,
+      "type": "Licor",
+      "id": 99
+    },
+    {
+      "name": "Yogurt Frutos Rojos(9)",
+      "price": 13000,
+      "cost": 0,
+      "type": "Malteadas9onz",
+      "id": 100
+    },
+    {
+      "name": "Cafe Arequipe(9)",
+      "price": 13000,
+      "cost": 0,
+      "type": "Malteadas9onz",
+      "id": 101
+    },
+    {
+      "name": "Yogurt Fruta(9)",
+      "price": 13000,
+      "cost": 0,
+      "type": "Malteadas9onz",
+      "id": 102
+    },
+    {
+      "name": "Vainilla Oreo(9)",
+      "price": 13000,
+      "cost": 0,
+      "type": "Malteadas9onz",
+      "id": 103
+    },
+    {
+      "name": "Vainilla Brownie(9)",
+      "price": 13000,
+      "cost": 0,
+      "type": "Malteadas9onz",
+      "id": 106
+    },
+    {
+      "name": "Mini Chips(9)",
+      "price": 13000,
+      "cost": 0,
+      "type": "Malteadas9onz",
+      "id": 107
+    },
+    {
+      "name": "Yogurt Frutos Rojos(12)",
+      "price": 15000,
+      "cost": 0,
+      "type": "Malteadas12onz",
+      "id": 108
+    },
+    {
+      "name": "Cafe Arequipe(12)",
+      "price": 15000,
+      "cost": 0,
+      "type": "Malteadas12onz",
+      "id": 109
+    },
+    {
+      "name": "Yogurt Fruta(12)",
+      "price": 15000,
+      "cost": 0,
+      "type": "Malteadas12onz",
+      "id": 110
+    },
+    {
+      "name": "Vainilla Oreo(12)",
+      "price": 15000,
+      "cost": 0,
+      "type": "Malteadas12onz",
+      "id": 111
+    },
+    {
+      "name": "Vainilla Brownie(12)",
+      "price": 15000,
+      "cost": 0,
+      "type": "Malteadas12onz",
+      "id": 114
+    },
+    {
+      "name": "Mini Chips(12)",
+      "price": 15000,
+      "cost": 0,
+      "type": "Malteadas12onz",
+      "id": 115
+    },
+    {
+      "name": "Agua",
+      "price": 3000,
+      "cost": 0,
+      "type": "Bebidas",
+      "id": 116
+    },
+    {
+      "name": "Canadadray",
+      "price": 3500,
+      "cost": 0,
+      "type": "Bebidas",
+      "id": 117
+    },
+    {
+      "name": "Bretaña",
+      "price": 3500,
+      "cost": 0,
+      "type": "Bebidas",
+      "id": 118
+    },
+    {
+      "name": "Oblea con arequipe",
+      "price": 4000,
+      "cost": 0,
+      "type": "Obleas",
+      "id": 119
+    },
+    {
+      "name": "Oblea arequipe salsa mora",
+      "price": 5500,
+      "cost": 0,
+      "type": "Obleas",
+      "id": 120
+    },
+    {
+      "name": "Oblea arequipe salsa mora y queso",
+      "price": 7000,
+      "cost": 0,
+      "type": "Obleas",
+      "id": 121
+    },
+    {
+      "name": "Oblea arequipe salsa mora y chantilly",
+      "price": 7000,
+      "cost": 0,
+      "type": "Obleas",
+      "id": 122
+    },
+    {
+      "name": "Ensalada grande",
+      "price": 13000,
+      "cost": 0,
+      "type": "Ensaladas",
+      "id": 123
+    },
+    {
+      "name": "Ensalada Mini",
+      "price": 9000,
+      "cost": 0,
+      "type": "Ensaladas",
+      "id": 124
+    },
+    {
+      "name": "Fresas, crema chantilly salsa de mora, leche condensadas y M&M",
+      "price": 14000,
+      "cost": 0,
+      "type": "Helados",
+      "id": 125
+    },
+    {
+      "name": "Fresas, crema chantilly salsa mora y una bola de helado",
+      "price": 14000,
+      "cost": 0,
+      "type": "Helados",
+      "id": 126
+    },
+    {
+      "name": "Fresas, cream chantilly salsa mora y leche condensada",
+      "price": 12000,
+      "cost": 0,
+      "type": "Helados",
+      "id": 127
+    },
+    {
+      "name": "Fresas, cream de leche, salsa mora y arequipe",
+      "price": 12000,
+      "cost": 0,
+      "type": "Helados",
+      "id": 128
+    }
+  ]
+}
